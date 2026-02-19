@@ -1,0 +1,26 @@
+name: app
+
+type: "python:3.9"
+
+dependencies:
+  python:
+    pipenv: "*"
+
+hooks:
+  build: |
+    pip install -r requirements.txt
+
+web:
+  commands:
+    start: "gunicorn ll_project.wsgi:application"
+
+disk: 1024
+
+mounts:
+  "/static":
+    source: local
+    source_path: static
+
+db:
+  type: postgresql:13
+  disk: 512
