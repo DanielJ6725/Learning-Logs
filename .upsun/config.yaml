@@ -1,7 +1,6 @@
 applications:
   app:
     type: python:3.9
-    root: .
 
     web:
       commands:
