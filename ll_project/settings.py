@@ -122,7 +122,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/dev/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/dev/ref/settings/#default-auto-field
@@ -143,7 +143,7 @@ if config.is_valid_platform():
     DEBUG = False
 
     if config.appDir:
-        STATIC_ROOT = Path(config.appDir) / 'static'
+        STATIC_ROOT = BASE_DIR / "staticfiles"
     if config.projectEntropy:
         SECRET_KEY = config.projectEntropy
 
