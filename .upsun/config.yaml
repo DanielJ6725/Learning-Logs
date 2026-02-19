@@ -11,14 +11,16 @@ applications:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         python manage.py collectstatic --noinput
+      deploy: |
+        python manage.py migrate --noinput
 
     relationships:
       database: "db:postgresql"
 
-mounts:
-  "staticfiles":
-    source: local
-    source_path: staticfiles
+    mounts:
+      "staticfiles":
+        source: local
+        source_path: staticfiles
 
 services:
   db:
