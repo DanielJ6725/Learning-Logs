@@ -1,3 +1,19 @@
-ll_env/
+# Python
 __pycache__/
-*.sqlite3
+*.pyc
+
+# Virtual envs
+ll_env/
+ll_project/
+venv/
+.venv/
+
+# Django
+db.sqlite3
+*.log
+
+# VS Code
+.vscode/
+
+
+.upsun/local/
